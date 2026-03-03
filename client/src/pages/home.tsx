@@ -25,38 +25,63 @@ export default function Home() {
           />
         </div>
         
-        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto mt-20">
+        <div className="relative z-20 text-center px-4 max-w-7xl mx-auto mt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white tracking-widest mb-6 drop-shadow-2xl">
-              UNPARALLELED <span className="gold-gradient-text">PRESTIGE</span>
+            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-sans font-black text-white tracking-tighter mb-2 leading-[0.8]">
+              AMARI<br/><span className="text-white/20">SUPERCARS</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 font-light tracking-wide">
-              Discover the world's most exclusive collection of luxury and performance vehicles.
+            <p className="text-xl md:text-2xl text-white font-bold uppercase tracking-[0.2em] mt-8 mb-12">
+              The World's Finest Selection
             </p>
-            <Link 
-              href="/inventory"
-              className="inline-flex items-center px-8 py-4 bg-primary text-background font-semibold uppercase tracking-widest hover:bg-white transition-colors duration-300 shadow-[0_0_30px_rgba(212,175,55,0.3)]"
-            >
-              Explore Collection
-              <ArrowRight className="ml-3 w-5 h-5" />
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link 
+                href="/inventory"
+                className="inline-flex items-center px-10 py-5 bg-white text-black font-black uppercase tracking-tighter hover:bg-white/90 transition-all duration-300 text-lg"
+              >
+                View Inventory
+              </Link>
+              <a 
+                href="#contact"
+                className="inline-flex items-center px-10 py-5 bg-transparent text-white border-2 border-white font-black uppercase tracking-tighter hover:bg-white hover:text-black transition-all duration-300 text-lg"
+              >
+                Contact Us
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Latest Arrivals Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <div className="flex justify-between items-end mb-12">
-          <div>
-            <h2 className="text-sm text-primary uppercase tracking-[0.3em] font-semibold mb-2">New to the showroom</h2>
-            <h3 className="text-3xl md:text-4xl font-display text-white">LATEST ARRIVALS</h3>
+      {/* Stats Bar */}
+      <div className="bg-white py-4 w-full z-30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center overflow-x-auto no-scrollbar gap-8">
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="font-black text-black text-2xl italic tracking-tighter">Est. 1980</span>
+            <span className="text-black/40 text-xs font-bold uppercase tracking-widest">Heritage</span>
           </div>
-          <Link href="/inventory" className="hidden md:inline-flex items-center text-sm uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors">
-            View Full Inventory <ArrowRight className="ml-2 w-4 h-4" />
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="font-black text-black text-2xl italic tracking-tighter">100+</span>
+            <span className="text-black/40 text-xs font-bold uppercase tracking-widest">Cars in stock</span>
+          </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="font-black text-black text-2xl italic tracking-tighter">Global</span>
+            <span className="text-black/40 text-xs font-bold uppercase tracking-widest">Delivery</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Latest Arrivals Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full">
+        <div className="flex flex-col md:flex-row justify-between items-baseline mb-16 border-l-8 border-white pl-8">
+          <div>
+            <h3 className="text-6xl md:text-8xl font-sans font-black text-white tracking-tighter leading-none">NEW ARRIVALS</h3>
+            <p className="text-white/40 font-bold uppercase tracking-[0.3em] mt-4">Fresh stock updated daily</p>
+          </div>
+          <Link href="/inventory" className="mt-8 md:mt-0 text-white font-black uppercase tracking-tighter border-b-4 border-white pb-1 hover:border-white/50 transition-all text-xl">
+            See All Stock
           </Link>
         </div>
 

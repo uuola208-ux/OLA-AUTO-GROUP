@@ -2,45 +2,40 @@ import { Link } from "wouter";
 
 export function Footer() {
   return (
-    <footer className="bg-[#050505] border-t border-white/5 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          <div>
-            <Link href="/" className="text-2xl font-display font-bold tracking-widest text-white block mb-4">
-              EUROPEAN<span className="text-primary">PRESTIGE</span>
-            </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-              Sourcing the world's most exclusive luxury and performance vehicles. 
-              Quality over quantity, rigorously inspected for the discerning collector.
-            </p>
-          </div>
-          
-          <div>
-            <h3 className="text-white font-display tracking-widest mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="/inventory" className="hover:text-primary transition-colors">Inventory</Link></li>
-              <li><Link href="/admin" className="hover:text-primary transition-colors">Staff Login</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-white font-display tracking-widest mb-4">Showroom</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>123 Luxury Way, London, UK</li>
-              <li>+44 7000 000 000</li>
-              <li>sales@europeanprestige.com</li>
-              <li className="pt-2">Mon - Sat: 9am - 6pm</li>
-            </ul>
-          </div>
+    <footer className="bg-black py-20 px-4 border-t border-white/10">
+      <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="md:col-span-2">
+          <Link href="/" className="text-4xl font-sans font-black tracking-tighter text-white mb-6 block">
+            AMARI<span className="text-white/20">SUPERCARS</span>
+          </Link>
+          <p className="text-white/40 max-w-md font-bold uppercase tracking-widest text-xs leading-relaxed">
+            The world's finest selection of luxury and performance vehicles. Established 1980.
+          </p>
         </div>
-        
-        <div className="pt-8 border-t border-white/5 text-center text-xs text-muted-foreground flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {new Date().getFullYear()} European Prestige. All Rights Reserved.</p>
-          <div className="mt-4 md:mt-0 space-x-4">
-            <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>
-          </div>
+        <div>
+          <h4 className="text-white font-black uppercase tracking-tighter mb-6">Inventory</h4>
+          <ul className="space-y-4">
+            <li><Link href="/inventory" className="text-white/40 hover:text-white transition-colors uppercase tracking-widest text-xs font-bold">All Stock</Link></li>
+            <li><Link href="/inventory?category=new" className="text-white/40 hover:text-white transition-colors uppercase tracking-widest text-xs font-bold">New Arrivals</Link></li>
+            <li><Link href="/inventory?category=prestige" className="text-white/40 hover:text-white transition-colors uppercase tracking-widest text-xs font-bold">Prestige Collection</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-white font-black uppercase tracking-tighter mb-6">Connect</h4>
+          <ul className="space-y-4">
+            <li><a href="#contact" className="text-white/40 hover:text-white transition-colors uppercase tracking-widest text-xs font-bold">Contact Us</a></li>
+            <li><a href="#" className="text-white/40 hover:text-white transition-colors uppercase tracking-widest text-xs font-bold">Instagram</a></li>
+            <li><a href="#" className="text-white/40 hover:text-white transition-colors uppercase tracking-widest text-xs font-bold">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="max-w-[1600px] mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-white/20 text-[10px] uppercase font-bold tracking-[0.3em]">
+          &copy; {new Date().getFullYear()} AMARI SUPERCARS. ALL RIGHTS RESERVED.
+        </p>
+        <div className="flex gap-8">
+          <a href="#" className="text-white/20 text-[10px] uppercase font-bold tracking-[0.3em] hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" className="text-white/20 text-[10px] uppercase font-bold tracking-[0.3em] hover:text-white transition-colors">Terms of Service</a>
         </div>
       </div>
     </footer>

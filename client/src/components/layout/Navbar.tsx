@@ -25,32 +25,43 @@ export function Navbar() {
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "luxury-glass py-4 shadow-lg" : "bg-transparent py-6"
+        isScrolled ? "bg-white py-4 shadow-xl" : "bg-transparent py-8"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className="max-w-[1600px] mx-auto px-6 flex justify-between items-center">
         <Link 
           href="/" 
-          className="text-2xl font-display font-bold tracking-widest text-white hover:text-primary transition-colors"
+          className={`text-4xl font-sans font-black tracking-tighter transition-colors ${
+            isScrolled ? "text-black" : "text-white"
+          }`}
         >
-          EUROPEAN<span className="text-primary">PRESTIGE</span>
+          AMARI<span className={isScrolled ? "text-black/20" : "text-white/20"}>SUPERCARS</span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-12">
           {navLinks.map((link) => (
             <Link 
               key={link.path} 
               href={link.path}
-              className={`text-sm uppercase tracking-widest font-medium transition-colors hover:text-primary ${
-                location === link.path ? "text-primary" : "text-white/80"
+              className={`text-xs uppercase tracking-[0.2em] font-black transition-colors hover:opacity-50 ${
+                isScrolled 
+                  ? (location === link.path ? "text-black" : "text-black/60") 
+                  : (location === link.path ? "text-white" : "text-white/60")
               }`}
             >
               {link.name}
             </Link>
           ))}
-          <a href="#contact" className="px-6 py-2 border border-primary text-primary hover:bg-primary hover:text-background transition-all uppercase tracking-widest text-xs font-semibold">
-            Contact Us
+          <a 
+            href="#contact" 
+            className={`px-8 py-3 font-black uppercase tracking-tighter text-sm transition-all border-2 ${
+              isScrolled 
+                ? "border-black text-black hover:bg-black hover:text-white" 
+                : "border-white text-white hover:bg-white hover:text-black"
+            }`}
+          >
+            Get in Touch
           </a>
         </nav>
 
