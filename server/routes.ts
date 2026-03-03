@@ -82,26 +82,53 @@ export async function registerRoutes(
   async function seedDatabase() {
     try {
         const existingCars = await storage.getCars();
-        if (existingCars.length === 0) {
-            await storage.createCar({
-                title: "2024 Mercedes-Benz G-Class G63 AMG",
-                price: 185000,
-                images: ["https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=800"],
-                details: "Stunning G63 AMG finished in Obsidian Black. Full service history."
-            });
-            await storage.createCar({
-                title: "2023 Porsche 911 GT3 RS",
-                price: 245000,
-                images: ["https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800"],
-                details: "Track-focused GT3 RS with Weissach package."
-            });
-            await storage.createCar({
-                title: "2022 Range Rover Autobiography",
-                price: 125000,
-                images: ["https://images.unsplash.com/photo-1606664515524-ed2f786a0b6e?w=800"],
-                details: "Ultimate luxury SUV. Fully loaded specification."
-            });
-            console.log("Database seeded successfully");
+        if (existingCars.length <= 3) {
+            const extraCars = [
+                {
+                    title: "2023 Ferrari F8 Tributo",
+                    price: 285000,
+                    images: ["https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800"],
+                    details: "Rosso Corsa exterior with Carbon Fibre racing seats. 3.9L V8 Twin-Turbo."
+                },
+                {
+                    title: "2024 Lamborghini Huracán Sterrato",
+                    price: 275000,
+                    images: ["https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800"],
+                    details: "All-terrain super sports car. Limited edition #1 of 1499."
+                },
+                {
+                    title: "2023 Bentley Continental GT Mulliner",
+                    price: 215000,
+                    images: ["https://images.unsplash.com/photo-1621135802920-133df287f89c?w=800"],
+                    details: "The pinnacle of luxury grand touring. W12 engine with exquisite Mulliner craftsmanship."
+                },
+                {
+                    title: "2024 Aston Martin DBS Volante",
+                    price: 310000,
+                    images: ["https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?w=800"],
+                    details: "Beautifully engineered convertible with a 5.2L V12 bi-turbo engine."
+                },
+                {
+                    title: "2023 Rolls-Royce Ghost",
+                    price: 340000,
+                    images: ["https://images.unsplash.com/photo-1631214500115-598fc2cb8d2d?w=800"],
+                    details: "Effortless power and serenity. Finished in Arctic White with Grace White interior."
+                },
+                {
+                    title: "2024 McLaren 750S Spider",
+                    price: 325000,
+                    images: ["https://images.unsplash.com/photo-1626290119309-470a577d63ce?w=800"],
+                    details: "Lighter, more powerful, and even more engaging. Performance focused supercar."
+                }
+            ];
+
+            for (const car of extraCars) {
+                // Avoid duplicates by checking title
+                if (!existingCars.find(c => c.title === car.title)) {
+                    await storage.createCar(car);
+                }
+            }
+            console.log("Database seeded with additional inventory");
         }
     } catch (err) {
         console.error("Failed to seed database:", err);
