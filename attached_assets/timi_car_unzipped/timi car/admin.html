@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | European Prestige</title>
+    <link rel="stylesheet" href="adminstyle.css">
+    <script>
+        if (sessionStorage.getItem('auth') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body class="admin-layout">
+
+    <aside class="sidebar">
+        <div class="logo">EP<span>ADMIN</span></div>
+        <nav style="margin-top: 50px;">
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 20px;"><a href="#" class="active">Inventory</a></li>
+                <li style="margin-bottom: 20px;"><a href="index.html">View Site</a></li>
+                <li><button onclick="sessionStorage.clear(); window.location.href='index.html';" class="logout-btn">LOGOUT</button></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <h1>FLEET MANAGEMENT</h1>
+            <button onclick="openAddModal()" class="add-btn">+ ADD NEW VEHICLE</button>
+        </header>
+
+        <section class="live-stock">
+            <h3>LIVE INVENTORY</h3>
+            <div id="adminInventory" class="admin-list-container">
+                </div>
+        </section>
+
+        <div id="addModal" class="modal">
+            <div class="modal-content">
+                <h3 id="modalTitle">NEW ENTRY</h3>
+                <form id="addCarForm">
+                    <input type="text" id="carTitle" placeholder="Vehicle Name (e.g., 2023 BMW M5)" required>
+                    <input type="number" id="carPrice" placeholder="Price (£)" required>
+                    
+                    <div class="tab-group">
+                        <button type="button" onclick="toggleImageSource('url')">IMAGE LINKS</button>
+                        <button type="button" onclick="toggleImageSource('file')">PC UPLOAD</button>
+                    </div>
+
+                    <div id="imageInputList">
+                        <div class="image-input-row">
+                            <input type="url" class="img-src" placeholder="https://example.com/image.jpg">
+                            <button type="button" onclick="addImageRow()" class="plus-btn">+</button>
+                        </div>
+                    </div>
+
+                    <div style="background:#1a1a1a; border:1px solid #333; border-radius:4px; padding:12px; margin-bottom:15px; font-size:0.8rem; color:#aaa; line-height:1.6;">
+                        <strong style="color:var(--gold);">📸 How to add images:</strong><br>
+                        <strong style="color:#fff;">Option 1: Image Links</strong><br>
+                        1. Get image URL (from Google Images, Unsplash, etc)<br>
+                        2. Right-click → "Open image in new tab" to get DIRECT link<br>
+                        3. Paste the URL (should start with http)<br>
+                        <br>
+                        <strong style="color:#fff;">Option 2: Upload from PC</strong><br>
+                        1. Click "PC UPLOAD" tab<br>
+                        2. Select image files from your computer<br>
+                        3. Multiple files supported<br>
+                        <span style="color:#666;">Note: Files are converted to embedded images</span>
+                    </div>
+
+                    <input type="file" id="carFile" style="display: none;" accept="image/*" multiple>
+                    <textarea id="carDetails" placeholder="Specifications & Description (e.g., Engine, Mileage, Features)" required></textarea>
+                    
+                    <div class="modal-footer">
+                        <button type="button" onclick="closeModal()" class="cancel-btn">CANCEL</button>
+                        <button type="submit" id="submitBtn" class="save-btn">SAVE TO DATABASE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

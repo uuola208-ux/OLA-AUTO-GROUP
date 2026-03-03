@@ -1,0 +1,65 @@
+╔════════════════════════════════════════════════════════════════╗
+║         TESTING IMAGES - DIAGNOSTIC GUIDE                      ║
+╚════════════════════════════════════════════════════════════════╝
+
+📋 STEPS TO TEST AND FIX IMAGE ISSUE:
+
+1️⃣  REFRESH THE ADMIN PAGE
+   - Go to http://localhost:3000/admin.html
+   - Force refresh (Ctrl+F5 or Cmd+Shift+R)
+
+2️⃣  OPEN DEVELOPER CONSOLE
+   - Press F12 (or right-click → Inspect)
+   - Click the "Console" tab
+   - Clear any previous logs
+
+3️⃣  ADD A TEST CAR WITH REAL IMAGE
+   - Click "+ ADD NEW VEHICLE"
+   - Fill in:
+     • Name: "Test Car"
+     • Price: "12345"
+     • Image URL: Copy this real working URL:
+       https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400
+     • Description: "Test vehicle"
+   - Click "SAVE TO DATABASE"
+
+4️⃣  CHECK CONSOLE LOGS
+   ✅ You should see:
+   - "Found image inputs: 1"
+   - "Input 0: https://images.unsplash.com/..."
+   - "Final images array: [one long URL]"
+   - "Saving car data: {title: ..., images: [...]}"
+   
+   ❌ If you see empty values or no URL, that's the issue
+
+5️⃣  CHECK SERVER RESPONSE
+   After "PROCESSING..." completes, look for:
+   - "SERVER RESPONSE" log entry
+   - It should show the saved car data with images array
+
+6️⃣  VERIFY IN DATABASE
+   The server terminal should log the saved data.
+   Check if images are stored correctly.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ IF SOMETHING GOES WRONG:
+
+CASE A: Image URL not showing in console
+   → The input field might not be getting the value
+   → Try clicking directly in the image field and typing
+
+CASE B: Server gets empty array []
+   → Check if the image input HTML element has class "img-src"
+   → Make sure the form reset isn't clearing values
+
+CASE C: Images saved but showing as null
+   → Server might be converting empty strings to null
+   → Check MongoDB to see exact array content
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 REAL WORKING IMAGE URLS TO TEST:
+https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400
+https://images.unsplash.com/photo-1552820728-8cd51f5343c9?w=400
+https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400
