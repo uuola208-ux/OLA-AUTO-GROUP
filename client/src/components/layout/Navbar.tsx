@@ -32,10 +32,10 @@ export function Navbar() {
         <Link 
           href="/" 
           className={`text-4xl font-sans font-black tracking-tighter transition-colors ${
-            isScrolled ? "text-black" : "text-white"
+            isScrolled ? "text-black" : "text-black"
           }`}
         >
-          AMARI<span className={isScrolled ? "text-black/20" : "text-white/20"}>SUPERCARS</span>
+          OLA<span className={isScrolled ? "text-black/10" : "text-black/10"}>AUTO GROUP</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -47,7 +47,7 @@ export function Navbar() {
               className={`text-xs uppercase tracking-[0.2em] font-black transition-colors hover:opacity-50 ${
                 isScrolled 
                   ? (location === link.path ? "text-black" : "text-black/60") 
-                  : (location === link.path ? "text-white" : "text-white/60")
+                  : (location === link.path ? "text-black" : "text-black/60")
               }`}
             >
               {link.name}
@@ -58,7 +58,7 @@ export function Navbar() {
             className={`px-8 py-3 font-black uppercase tracking-tighter text-sm transition-all border-2 ${
               isScrolled 
                 ? "border-black text-black hover:bg-black hover:text-white" 
-                : "border-white text-white hover:bg-white hover:text-black"
+                : "border-black text-black hover:bg-black hover:text-white"
             }`}
           >
             Get in Touch

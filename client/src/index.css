@@ -10,43 +10,43 @@
     --font-display: 'Cinzel', serif;
 
     /* Luxury Matured Theme - Slate/Charcoal */
-    --background: 210 10% 10%;
-    --foreground: 210 10% 98%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
     
-    --card: 210 10% 12%;
-    --card-foreground: 210 10% 98%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 0%;
     
-    --popover: 210 10% 12%;
-    --popover-foreground: 210 10% 98%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 0%;
     
-    --primary: 210 10% 100%; 
-    --primary-foreground: 210 10% 10%;
+    --primary: 0 0% 0%; 
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 210 10% 15%;
-    --secondary-foreground: 210 10% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
     
-    --muted: 210 10% 20%;
-    --muted-foreground: 210 10% 70%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
     
-    --accent: 210 10% 25%;
-    --accent-foreground: 210 10% 100%;
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 10% 100%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 10% 20%;
-    --input: 210 10% 20%;
-    --ring: 210 10% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
 
     --radius: 0rem; 
   }
 
   .light {
-    --background: 210 10% 98%;
-    --foreground: 210 10% 10%;
-    --card: 210 10% 95%;
-    --card-foreground: 210 10% 10%;
-    --border: 210 10% 90%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 0%;
+    --border: 0 0% 90%;
   }
 }
 
@@ -67,7 +67,7 @@
 
 @layer utilities {
   .amari-gradient {
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(15, 17, 20, 0.9) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(255, 255, 255, 0.9) 100%);
   }
   
   .luxury-glass {

@@ -17,7 +17,7 @@ export default function Inventory() {
             className="border-l-[12px] border-black pl-10"
           >
             <h1 className="text-7xl md:text-9xl font-sans font-black text-black tracking-tighter leading-[0.8] mb-6">
-              THE<br/><span className="text-black/20">COLLECTION</span>
+              THE<br/><span className="text-black/10">COLLECTION</span>
             </h1>
             <p className="text-black font-bold uppercase tracking-[0.4em] text-sm">
               Currently {cars?.length || 0} masterpiece vehicles in stock

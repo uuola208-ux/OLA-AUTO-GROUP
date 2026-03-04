@@ -22,7 +22,7 @@ export function CarCard({ car, index = 0 }: CarCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative flex flex-col bg-[#0f1114] border-none overflow-hidden"
+      className="group relative flex flex-col bg-card border-none overflow-hidden"
     >
       <div className="relative aspect-[16/9] overflow-hidden">
         <img 
@@ -35,21 +35,18 @@ export function CarCard({ car, index = 0 }: CarCardProps) {
         <div className="absolute bottom-6 left-6 right-6 z-20">
           <div className="flex justify-between items-end">
             <div>
-              <h3 className="font-sans font-black text-3xl md:text-4xl text-white tracking-tighter leading-none mb-2">
+              <h3 className="font-sans font-black text-3xl md:text-4xl text-black tracking-tighter leading-none mb-2">
                 {car.title.split(' ').slice(0, 2).join(' ')}<br/>
-                <span className="text-white/40">{car.title.split(' ').slice(2).join(' ')}</span>
+                <span className="text-black/40">{car.title.split(' ').slice(2).join(' ')}</span>
               </h3>
-              <p className="text-white/60 text-xs font-bold uppercase tracking-[0.2em]">
-                Available Now
-              </p>
             </div>
             <div className="text-right">
-              <p className="text-white font-black text-2xl italic tracking-tighter mb-1">
+              <p className="text-black font-black text-2xl italic tracking-tighter mb-1">
                 {formattedPrice}
               </p>
               <Link 
                 href={`/car/${car.id}`}
-                className="inline-block text-white font-black uppercase tracking-tighter border-b-2 border-white pb-0.5 hover:border-white/50 transition-all text-sm"
+                className="inline-block text-black font-black uppercase tracking-tighter border-b-2 border-black pb-0.5 hover:border-black/50 transition-all text-sm"
               >
                 View Details
               </Link>
@@ -58,8 +55,8 @@ export function CarCard({ car, index = 0 }: CarCardProps) {
         </div>
 
         {/* Hover overlay button */}
-        <div className="absolute inset-0 z-30 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-             <Link href={`/car/${car.id}`} className="px-8 py-3 bg-white text-black font-black uppercase tracking-tighter transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+        <div className="absolute inset-0 z-30 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+             <Link href={`/car/${car.id}`} className="px-8 py-3 bg-black text-white font-black uppercase tracking-tighter transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                 Explore Vehicle
              </Link>
         </div>
