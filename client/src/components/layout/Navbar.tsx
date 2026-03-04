@@ -25,17 +25,17 @@ export function Navbar() {
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white py-4 shadow-xl" : "bg-transparent py-8"
+        isScrolled ? "bg-black py-4 shadow-xl border-b border-white/10" : "bg-transparent py-8"
       }`}
     >
       <div className="max-w-[1600px] mx-auto px-6 flex justify-between items-center">
         <Link 
           href="/" 
           className={`text-4xl font-sans font-black tracking-tighter transition-colors ${
-            isScrolled ? "text-black" : "text-black"
+            isScrolled ? "text-white" : "text-white"
           }`}
         >
-          OLA<span className={isScrolled ? "text-black/10" : "text-black/10"}>AUTO GROUP</span>
+          OLA<span className={isScrolled ? "text-white/20" : "text-white/20"}>AUTO GROUP</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -46,8 +46,8 @@ export function Navbar() {
               href={link.path}
               className={`text-xs uppercase tracking-[0.2em] font-black transition-colors hover:opacity-50 ${
                 isScrolled 
-                  ? (location === link.path ? "text-black" : "text-black/60") 
-                  : (location === link.path ? "text-black" : "text-black/60")
+                  ? (location === link.path ? "text-white" : "text-white/60") 
+                  : (location === link.path ? "text-white" : "text-white/60")
               }`}
             >
               {link.name}
@@ -57,8 +57,8 @@ export function Navbar() {
             href="#contact" 
             className={`px-8 py-3 font-black uppercase tracking-tighter text-sm transition-all border-2 ${
               isScrolled 
-                ? "border-black text-black hover:bg-black hover:text-white" 
-                : "border-black text-black hover:bg-black hover:text-white"
+                ? "border-white text-white hover:bg-white hover:text-black" 
+                : "border-white text-white hover:bg-white hover:text-black"
             }`}
           >
             Get in Touch

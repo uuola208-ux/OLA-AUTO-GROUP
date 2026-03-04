@@ -9,44 +9,41 @@
     --font-sans: 'DM Sans', sans-serif;
     --font-display: 'Cinzel', serif;
 
-    /* Luxury Matured Theme - Slate/Charcoal */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* High Contrast Dark Theme - Ola Auto Group */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
     
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 0%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
     
-    --popover: 0 0% 98%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
     
-    --primary: 0 0% 0%; 
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 100%; 
+    --primary-foreground: 0 0% 0%;
     
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
     
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
     
-    --accent: 0 0% 0%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 0%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
 
     --radius: 0rem; 
   }
 
   .light {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 0%;
-    --border: 0 0% 90%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
   }
 }
 
@@ -61,20 +58,20 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-sans); 
-    @apply tracking-tighter font-black uppercase;
+    @apply tracking-tighter font-black uppercase text-white;
   }
 }
 
 @layer utilities {
   .amari-gradient {
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(255, 255, 255, 0.9) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%);
   }
   
   .luxury-glass {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
 
