@@ -9,44 +9,44 @@
     --font-sans: 'DM Sans', sans-serif;
     --font-display: 'Cinzel', serif;
 
-    /* Luxury Dark Theme by default */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    /* Luxury Matured Theme - Slate/Charcoal */
+    --background: 210 10% 10%;
+    --foreground: 210 10% 98%;
     
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 98%;
+    --card: 210 10% 12%;
+    --card-foreground: 210 10% 98%;
     
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 210 10% 12%;
+    --popover-foreground: 210 10% 98%;
     
-    --primary: 0 0% 100%; /* White for primary buttons/accents like Amari */
-    --primary-foreground: 0 0% 0%;
+    --primary: 210 10% 100%; 
+    --primary-foreground: 210 10% 10%;
     
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 210 10% 15%;
+    --secondary-foreground: 210 10% 100%;
     
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 210 10% 20%;
+    --muted-foreground: 210 10% 70%;
     
-    --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 210 10% 25%;
+    --accent-foreground: 210 10% 100%;
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 10% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 100%;
+    --border: 210 10% 20%;
+    --input: 210 10% 20%;
+    --ring: 210 10% 100%;
 
-    --radius: 0rem; /* Amari uses very sharp corners */
+    --radius: 0rem; 
   }
 
   .light {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 0%;
-    --border: 0 0% 90%;
+    --background: 210 10% 98%;
+    --foreground: 210 10% 10%;
+    --card: 210 10% 95%;
+    --card-foreground: 210 10% 10%;
+    --border: 210 10% 90%;
   }
 }
 
@@ -60,14 +60,14 @@
     overflow-x: hidden;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-sans); /* Amari uses clean sans-serif */
+    font-family: var(--font-sans); 
     @apply tracking-tighter font-black uppercase;
   }
 }
 
 @layer utilities {
   .amari-gradient {
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(15, 17, 20, 0.9) 100%);
   }
   
   .luxury-glass {

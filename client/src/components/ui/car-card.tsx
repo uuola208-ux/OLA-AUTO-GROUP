@@ -22,15 +22,15 @@ export function CarCard({ car, index = 0 }: CarCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative flex flex-col bg-black border-none overflow-hidden"
+      className="group relative flex flex-col bg-[#0f1114] border-none overflow-hidden"
     >
       <div className="relative aspect-[16/9] overflow-hidden">
         <img 
           src={thumbnail} 
           alt={car.title}
-          className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-1000 ease-out grayscale group-hover:grayscale-0"
+          className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-1000 ease-out"
         />
-        <div className="absolute inset-0 amari-gradient opacity-80 z-10" />
+        <div className="absolute inset-0 amari-gradient opacity-90 z-10" />
         
         <div className="absolute bottom-6 left-6 right-6 z-20">
           <div className="flex justify-between items-end">
@@ -58,7 +58,7 @@ export function CarCard({ car, index = 0 }: CarCardProps) {
         </div>
 
         {/* Hover overlay button */}
-        <div className="absolute inset-0 z-30 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 z-30 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
              <Link href={`/car/${car.id}`} className="px-8 py-3 bg-white text-black font-black uppercase tracking-tighter transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                 Explore Vehicle
              </Link>

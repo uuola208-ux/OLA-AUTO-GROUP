@@ -55,24 +55,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <div className="bg-white py-4 w-full z-30 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center overflow-x-auto no-scrollbar gap-8">
-          <div className="flex items-center gap-3 shrink-0">
-            <span className="font-black text-black text-2xl italic tracking-tighter">Est. 1980</span>
-            <span className="text-black/40 text-xs font-bold uppercase tracking-widest">Heritage</span>
-          </div>
-          <div className="flex items-center gap-3 shrink-0">
-            <span className="font-black text-black text-2xl italic tracking-tighter">100+</span>
-            <span className="text-black/40 text-xs font-bold uppercase tracking-widest">Cars in stock</span>
-          </div>
-          <div className="flex items-center gap-3 shrink-0">
-            <span className="font-black text-black text-2xl italic tracking-tighter">Global</span>
-            <span className="text-black/40 text-xs font-bold uppercase tracking-widest">Delivery</span>
-          </div>
-        </div>
-      </div>
-
       {/* Latest Arrivals Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full">
         <div className="flex flex-col md:flex-row justify-between items-baseline mb-16 border-l-8 border-white pl-8">
