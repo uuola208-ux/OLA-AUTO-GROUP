@@ -10,7 +10,17 @@ import { setupAuth } from "./auth";
 const app = express();
 const httpServer = createServer(app);
 
-app.use(cors({ origin: 'https://olaautogroup.co.uk', credentials: true }));
+// Trust Render's proxy for secure cookies
+app.set("trust proxy", 1);
+
+app.use(cors({ 
+  origin: [
+    'https://olaautogroup.co.uk', 
+    'https://www.olaautogroup.co.uk',
+    'https://ola-auto-group.onrender.com'
+  ], 
+  credentials: true 
+}));
 
 declare module "http" {
   interface IncomingMessage {
