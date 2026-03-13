@@ -19,21 +19,18 @@ export function Navbar() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Inventory", path: "/inventory" },
-    { name: "Admin", path: "/admin" },
   ];
 
   return (
-    <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black py-4 shadow-xl border-b border-white/10" : "bg-transparent py-8"
-      }`}
+    <header
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-black py-4 shadow-xl border-b border-white/10" : "bg-transparent py-8"
+        }`}
     >
       <div className="max-w-[1600px] mx-auto px-6 flex justify-between items-center">
-        <Link 
-          href="/" 
-          className={`text-4xl font-sans font-black tracking-tighter transition-colors ${
-            isScrolled ? "text-white" : "text-white"
-          }`}
+        <Link
+          href="/"
+          className={`text-4xl font-sans font-black tracking-tighter transition-colors ${isScrolled ? "text-white" : "text-white"
+            }`}
         >
           OLA<span className={isScrolled ? "text-white/20" : "text-white/20"}>AUTO GROUP</span>
         </Link>
@@ -41,32 +38,30 @@ export function Navbar() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-12">
           {navLinks.map((link) => (
-            <Link 
-              key={link.path} 
+            <Link
+              key={link.path}
               href={link.path}
-              className={`text-xs uppercase tracking-[0.2em] font-black transition-colors hover:opacity-50 ${
-                isScrolled 
-                  ? (location === link.path ? "text-white" : "text-white/60") 
+              className={`text-xs uppercase tracking-[0.2em] font-black transition-colors hover:opacity-50 ${isScrolled
+                  ? (location === link.path ? "text-white" : "text-white/60")
                   : (location === link.path ? "text-white" : "text-white/60")
-              }`}
+                }`}
             >
               {link.name}
             </Link>
           ))}
-          <a 
-            href="#contact" 
-            className={`px-8 py-3 font-black uppercase tracking-tighter text-sm transition-all border-2 ${
-              isScrolled 
-                ? "border-white text-white hover:bg-white hover:text-black" 
+          <a
+            href="#contact"
+            className={`px-8 py-3 font-black uppercase tracking-tighter text-sm transition-all border-2 ${isScrolled
+                ? "border-white text-white hover:bg-white hover:text-black"
                 : "border-white text-white hover:bg-white hover:text-black"
-            }`}
+              }`}
           >
             Get in Touch
           </a>
         </nav>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-white hover:text-primary transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -77,7 +72,7 @@ export function Navbar() {
       {/* Mobile Nav */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -85,19 +80,18 @@ export function Navbar() {
           >
             <nav className="flex flex-col px-6 py-8 space-y-6">
               {navLinks.map((link) => (
-                <Link 
-                  key={link.path} 
+                <Link
+                  key={link.path}
                   href={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-lg uppercase tracking-widest font-medium transition-colors ${
-                    location === link.path ? "text-primary" : "text-white/80"
-                  }`}
+                  className={`text-lg uppercase tracking-widest font-medium transition-colors ${location === link.path ? "text-primary" : "text-white/80"
+                    }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-4 px-6 py-3 border border-primary text-primary text-center hover:bg-primary hover:text-background transition-all uppercase tracking-widest text-sm font-semibold"
               >

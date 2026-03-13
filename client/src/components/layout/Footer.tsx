@@ -24,6 +24,7 @@ export function Footer() {
           <ul className="space-y-4 text-white/40 font-bold uppercase tracking-widest text-xs">
             <li>Email: enquiries@olaautogroup.co.uk</li>
             <li>Instagram: @olaautogroup</li>
+            <li><Link href="/admin" className="hover:text-white transition-colors">Staff Login</Link></li>
           </ul>
         </div>
       </div>

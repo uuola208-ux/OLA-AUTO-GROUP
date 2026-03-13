@@ -6,11 +6,15 @@ import { Plus, Edit2, Trash2, LayoutDashboard, Loader2, Image as ImageIcon } fro
 import type { Car } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
 
+import { useAuth } from "@/hooks/use-auth";
+import { LogOut } from "lucide-react";
+
 export default function Admin() {
   const { data: cars, isLoading } = useCars();
   const deleteMutation = useDeleteCar();
+  const { logoutMutation } = useAuth();
   const { toast } = useToast();
-  
+
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editingCar, setEditingCar] = useState<Car | null>(null);
 
@@ -35,10 +39,14 @@ export default function Admin() {
     }
   };
 
+  const handleLogout = () => {
+    logoutMutation.mutate();
+  };
+
   return (
     <div className="min-h-screen bg-background pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 pb-6 border-b border-white/10">
           <div className="flex items-center gap-3">
             <LayoutDashboard className="text-primary w-8 h-8" />
@@ -47,12 +55,27 @@ export default function Admin() {
               <p className="text-xs uppercase tracking-widest text-muted-foreground">Inventory Management</p>
             </div>
           </div>
-          <Button 
-            onClick={handleCreateNew}
-            className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-widest text-xs rounded-none px-6 shadow-lg shadow-primary/20"
-          >
-            <Plus className="w-4 h-4 mr-2" /> Add New Vehicle
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              onClick={handleCreateNew}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-widest text-xs rounded-none px-6 shadow-lg shadow-primary/20"
+            >
+              <Plus className="w-4 h-4 mr-2" /> Add New Vehicle
+            </Button>
+            <Button
+              variant="outline"
+              onClick={handleLogout}
+              disabled={logoutMutation.isPending}
+              className="border-white/10 text-white hover:bg-white/5 uppercase tracking-widest text-xs rounded-none"
+            >
+              {logoutMutation.isPending ? (
+                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              ) : (
+                <LogOut className="w-4 h-4 mr-2" />
+              )}
+              Logout
+            </Button>
+          </div>
         </div>
 
         {isLoading ? (
@@ -106,17 +129,17 @@ export default function Admin() {
                       </td>
                       <td className="px-6 py-4 text-right">
                         <div className="flex justify-end gap-2 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
-                          <Button 
-                            variant="ghost" 
-                            size="sm" 
+                          <Button
+                            variant="ghost"
+                            size="sm"
                             onClick={() => handleEdit(car)}
                             className="h-8 w-8 p-0 text-white hover:text-primary hover:bg-primary/10 rounded-sm"
                           >
                             <Edit2 className="w-4 h-4" />
                           </Button>
-                          <Button 
-                            variant="ghost" 
-                            size="sm" 
+                          <Button
+                            variant="ghost"
+                            size="sm"
                             onClick={() => handleDelete(car.id, car.title)}
                             disabled={deleteMutation.isPending}
                             className="h-8 w-8 p-0 text-destructive hover:bg-destructive/10 hover:text-destructive rounded-sm"
@@ -134,11 +157,11 @@ export default function Admin() {
         )}
 
       </div>
-      
-      <CarFormDialog 
-        open={isDialogOpen} 
-        onOpenChange={setIsDialogOpen} 
-        car={editingCar} 
+
+      <CarFormDialog
+        open={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+        car={editingCar}
       />
     </div>
   );
