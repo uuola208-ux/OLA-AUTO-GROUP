@@ -4,7 +4,6 @@ import { createClient } from "@libsql/client";
 import * as schema from "@shared/schema";
 
 const client = createClient({
-	url: process.env.TURSO_CONNECTION_URL || "file:./sqlite.db",
-	authToken: process.env.TURSO_AUTH_TOKEN,
+	url: "file:./sqlite.db",
 });
 export const db = drizzle(client, { schema });
