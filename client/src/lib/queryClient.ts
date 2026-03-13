@@ -31,7 +31,10 @@ export const getQueryFn: <T>(options: {
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
     const BASE = import.meta.env.VITE_API_URL || "";
-    const res = await fetch(`${BASE}${queryKey.join("/")}`, {
+    // Ensure we don't end up with double slashes
+    const path = queryKey.join("/");
+    const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+    const res = await fetch(`${BASE}${normalizedPath}`, {
       credentials: "include",
     });
 
